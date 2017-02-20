@@ -2,7 +2,7 @@ import strutils, tables
 
 import client_itsyouonline
 
-let baseUri = "https://itsyou.online/v1/oauth/access_token"
+let baseUri = "https://itsyou.online/v1/oauth/access_token?response_type=id_token"
 proc getAccessToken*(c: Client, clientID: string, clientSecret: string, scopes: openArray[string], auds: openArray[string]):string =
   var qp: Table[string, string] = {
     "grant_type": "client_credentials",
